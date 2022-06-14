@@ -8,11 +8,13 @@ function Home() {
   return (
     <>
       <SliderComponent />
-      <HeroSection {...homeObjOne} />
+      <HeroSection />
+      <HeroSection />
+      {/* <HeroSection {...homeObjOne} />
       <HeroSection {...homeObjThree} />
       <HeroSection {...homeObjTwo} />
       <HeroSection {...homeObjFour} />
-      <Pricing />
+      <Pricing /> */}
     </>
   );
 }
