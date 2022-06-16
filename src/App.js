@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Home from './components/pages/HomePage/Home';
 import Services from './components/pages/Services/Services';
-import Products from './components/pages/Products/Products';
+import Solutions from './components/pages/Solutions/Solutions';
 import SignUp from './components/pages/SignUp/SignUp';
 import { BrowserRouter as Router, Routes , Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
@@ -13,14 +13,13 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <Home />
-      <Routes >
-        <Route path='/' exact component={Home} />
-        <Route path='/services' component={Services} />
-        <Route path='/products' component={Products} />
-        <Route path='/sign-up' component={SignUp} />
-      </Routes >
-
+      {/* <Home /> */}
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/services' element={<Services />} />
+        <Route path='/solutions' element={<Solutions />} />
+        <Route path='/sign-up' element={<SignUp />} />
+      </Routes>
       <Footer />
     </Router>
   );

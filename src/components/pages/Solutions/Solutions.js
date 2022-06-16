@@ -3,7 +3,7 @@ import HeroSection from '../../HeroSection';
 import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from './Data';
 import Pricing from '../../Pricing';
 
-function Products() {
+function Solutions() {
   return (
     <>
       <HeroSection {...homeObjOne} />
@@ -12,4 +12,4 @@ function Products() {
   );
 }
 
-export default Products;
+export default Solutions;

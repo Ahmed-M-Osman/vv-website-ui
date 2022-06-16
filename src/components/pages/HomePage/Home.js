@@ -3,13 +3,14 @@ import HeroSection from '../../HeroSection';
 import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from './Data';
 import Pricing from '../../Pricing';
 import SliderComponent from '../../SliderComponent';
+import MediaCard from '../../MediaCard';
 
 function Home() {
   return (
     <>
       <SliderComponent />
-      <HeroSection />
-      <HeroSection />
+      <MediaCard />
+      <Pricing />
       {/* <HeroSection {...homeObjOne} />
       <HeroSection {...homeObjThree} />
       <HeroSection {...homeObjTwo} />
