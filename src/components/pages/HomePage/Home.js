@@ -4,12 +4,13 @@ import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from './Data';
 import Pricing from '../../Pricing';
 import SliderComponent from '../../SliderComponent';
 import MediaCard from '../../MediaCard';
+import Card from '../../Card';
 
 function Home() {
   return (
     <>
       <SliderComponent />
-      <MediaCard />
+      <Card />
       <Pricing />
       {/* <HeroSection {...homeObjOne} />
       <HeroSection {...homeObjThree} />
