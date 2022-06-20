@@ -1,15 +1,81 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
-import { MdFingerprint } from 'react-icons/md';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
-import { GrTechnology } from 'react-icons/gr';
+import {useQuery, gql} from '@apollo/client';
+
+const NAVFOOT = gql`
+  query {
+    layout {
+      data {
+        id
+        __typename
+        attributes {
+          locale
+          metaTitleSuffix
+          metaData {
+            metaTitle
+            metaDescription
+          }
+          favicon {
+            data {
+              id
+              attributes {
+                name
+                url
+              }
+            }
+          }
+          navbar {
+            navLinks {
+              id
+              url
+              text
+              newtab
+            }
+            navButton {
+              id
+              url
+              text
+              newtab
+            }
+            logo {
+              data {
+                attributes {
+                  formats
+                }
+              }
+            }
+          }
+          footer {
+            logo {
+              data {
+                attributes {
+                  formats
+                }
+              }
+            } 
+            columns {
+              title
+              footerLinks {
+                url
+                text
+                newtab
+              }
+            }
+            copyrightText
+          }
+        }
+      }
+    }
+  }
+`;
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
+  const {loading, error, data} = useQuery(NAVFOOT);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -31,16 +97,19 @@ function Navbar() {
   }, []);
 
 
+  if (loading) return <p>Loading</p>
+  if (error) return <p>Error!</p>
+
+const vv_name = data.layout.data.attributes.metaData.metaTitle;
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
         <nav className='navbar'>
           <div className='navbar-container container'>
             <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-              {/* <GrTechnology className='navbar-icon' /> */}
-              Vision Valley SD
+              {vv_name}
             </Link>
-            <div className='menu-icon' onClick={handleClick}>
+            <div c1lassName='menu-icon' onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
