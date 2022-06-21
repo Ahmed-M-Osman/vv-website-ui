@@ -9,10 +9,86 @@ import {
   FaTwitter,
   FaLinkedin
 } from 'react-icons/fa';
-import { MdFingerprint } from 'react-icons/md';
-import { GrTechnology } from 'react-icons/gr';
+
+import {useQuery, gql} from '@apollo/client';
+
+const NAVFOOT = gql`
+  query {
+    layout {
+      data {
+        id
+        __typename
+        attributes {
+          locale
+          metaTitleSuffix
+          metaData {
+            metaTitle
+            metaDescription
+          }
+          favicon {
+            data {
+              id
+              attributes {
+                name
+                url
+              }
+            }
+          }
+          navbar {
+            navLinks {
+              id
+              url
+              text
+              newtab
+            }
+            navButton {
+              id
+              url
+              text
+              newtab
+            }
+            logo {
+              data {
+                attributes {
+                  formats
+                }
+              }
+            }
+          }
+          footer {
+            logo {
+              data {
+                attributes {
+                  formats
+                }
+              }
+            } 
+            columns {
+              title
+              footerLinks {
+                url
+                text
+                newtab
+              }
+            }
+            copyrightText
+          }
+        }
+      }
+    }
+  }
+`;
 
 function Footer() {
+  const {loading, error, data} = useQuery(NAVFOOT);
+
+  if (loading) return <p>Loading</p>
+  if (error) return <p>Error!</p>
+
+  const footer_cols = data.layout.data.attributes.footer.columns;
+  
+
+
   return (
     <div className='footer-container'>
       {/* <section className='footer-subscription'>
@@ -34,7 +110,24 @@ function Footer() {
           </form>
         </div>
       </section> */}
-      <div className='footer-links'>
+
+        <div className='footer-links'>
+          <div className='footer-link-wrapper'>
+            {footer_cols.map(footer_col => (
+              <div className='footer-link-items'>
+                <h2 className='font-bold'>{footer_col.title}</h2>
+                  {footer_col.footerLinks.map(footer_link => (
+                      <Link className='hover:text-orange-500' to={footer_link.url}>
+                          {footer_link.text}
+                      </Link>
+                  ))};
+              </div>
+            ))};
+          </div>
+        </div>
+
+
+      {/* <div className='footer-links'>
         <div className='footer-link-wrapper'>
           <div className='footer-link-items'>
             <h2>About Us</h2>
@@ -68,7 +161,7 @@ function Footer() {
             <Link to='/'>Twitter</Link>
           </div>
         </div>
-      </div>
+      </div> */}
       <section className='social-media'>
         <div className='social-media-wrap'>
           <div className='footer-logo'>

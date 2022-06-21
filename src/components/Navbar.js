@@ -88,56 +88,62 @@ function Navbar() {
     }
   };
 
-  useEffect(() => {
-    showButton();
-    window.addEventListener('resize', showButton);
-    return {
-     // window.removeEventListener('resize', showButton)
-    }
-  }, []);
+  // useEffect(() => {
+  //   showButton();
+  //   window.addEventListener('resize', showButton);
+  //   return {
+  //    // window.removeEventListener('resize', showButton)
+  //   }
+  // }, []);
 
 
   if (loading) return <p>Loading</p>
   if (error) return <p>Error!</p>
 
-const vv_name = data.layout.data.attributes.metaData.metaTitle;
+const meta_data = data.layout.data.attributes.metaData;
+const nav_links = data.layout.data.attributes.navbar.navLinks;
+
   return (
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
         <nav className='navbar'>
           <div className='navbar-container container'>
+            <div className="">
             <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-              {vv_name}
+              {meta_data.metaTitle}
             </Link>
-            <div c1lassName='menu-icon' onClick={handleClick}>
+            <small className='text-white text-sm '>The Knowledge Company</small>
+            </div>
+            
+            <div className='menu-icon' onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
             </div>
+    
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-              <li className='nav-item'>
-                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                  Home
-                </Link>
-              </li>
-              <li className='nav-item'>
-                <Link
-                  to='/services'
-                  className='nav-links'
-                  onClick={closeMobileMenu}
-                >
-                  Services
-                </Link>
-                
-              </li>
-              <li className='nav-item'>
-                <Link
-                  to='/solutions'
-                  className='nav-links'
-                  onClick={closeMobileMenu}
-                >
-                  Solutions
-                </Link>
-              </li>
-              {/* <li className='nav-btn'>
+              {nav_links.map(nav_link => (
+                    <li className='nav-item'>
+                    <Link
+                      to={nav_link.url}
+                      className='nav-links'
+                      onClick={closeMobileMenu}
+                    >
+                    {nav_link.text}
+                    </Link>
+                  </li>
+              ))};
+            </ul>
+
+          </div>
+        </nav>
+      </IconContext.Provider>
+    </>
+  );
+}
+
+export default Navbar;
+
+
+{/* <li className='nav-btn'>
                 {button ? (
                   <Link to='/sign-up' className='btn-link'>
                     <Button buttonStyle='btn--outline'>SIGN UP</Button>
@@ -154,12 +160,3 @@ const vv_name = data.layout.data.attributes.metaData.metaTitle;
                   </Link>
                 )}
               </li> */}
-            </ul>
-          </div>
-        </nav>
-      </IconContext.Provider>
-    </>
-  );
-}
-
-export default Navbar;

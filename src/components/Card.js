@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 function Card() {
     return(
             <>
-            <div className="container flex  mt-5">
+            <div className="container flex mt-5">
             {/* Flex on med screens and up  */}
-            <div className="lg:flex w-fit">
+            <div className="lg:flex w-fit ">
                 {/* 1st Card */}
                 <div
                 className="relative lg:w-1/3 flex-1 border-2 text-gray-700 text-center bg-gray-100 rounded-lg"
