@@ -23,7 +23,7 @@ function Card() {
                      non vel. Consectetur vero qui cum, aspernatur quod quae! Mollitia similique iusto consequatur ex iure culpa.</p>
                     
    
-                    <div className="absolute bottom-1 right-1 p-1 rounded border-2 border-orange-700 bg-orange-100 w-fit">
+                    <div className="absolute bottom-1 right-1 m-2 p-1 rounded border-2 border-orange-700 bg-orange-100 w-fit">
                         <Link to='/' className=''>
                         <strong className=" uppercase tracking-wide text-sm font-bold text-orange-700">Wireless</strong>
                         </Link>
@@ -50,7 +50,7 @@ function Card() {
                         <p className="block pb-10 text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus molestiae necessitatibus sequi illo officiis,
                          non vel. Consectetur vero qui cum, aspernatur quod quae! Mollitia similique iusto consequatur ex iure culpa.</p>
                         <div className="">
-                        <div className="absolute bottom-1 right-1 p-1 rounded border-2 border-green-700 bg-green-100 w-fit">
+                        <div className="absolute bottom-1 right-1 m-2 p-1 rounded border-2 border-green-700 bg-green-100 w-fit">
                         <Link to='/' className=''>
                         <strong className="uppercase tracking-wide text-sm font-bold text-green-700">Network</strong>
                         </Link>
@@ -75,7 +75,7 @@ function Card() {
                         </Link>
                         <p className="block pb-10 text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus molestiae necessitatibus sequi illo officiis,
                          non vel. Consectetur vero qui cum, aspernatur quod quae! Mollitia similique iusto consequatur ex iure culpa.</p>
-                    <div className="absolute bottom-1 right-1 p-1 rounded border-2 border-blue-700 bg-blue-100 w-fit">
+                    <div className="absolute bottom-1 right-1 m-2 p-1 rounded border-2 border-blue-700 bg-blue-100 w-fit">
                         <Link to='/' className=''>
                         <strong className="uppercase tracking-wide text-sm font-bold text-blue-700">Software</strong>
                         </Link>

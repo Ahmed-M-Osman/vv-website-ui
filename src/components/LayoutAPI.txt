@@ -1,0 +1,67 @@
+query {
+	layout {
+		data {
+			id
+			__typename
+			attributes {
+				locale
+# 				Use the meta data below for the tab name and suffix
+				metaTitleSuffix
+				metaData {
+					metaTitle
+					metaDescription
+				}
+# 				The favicon for the website
+				favicon {
+					data {
+						id
+						attributes {
+							name
+							url
+						}
+					}
+				}
+# 				Button below the navlinks is for the language change
+				navbar {
+					navLinks {
+						id
+						url
+						text
+						newtab
+					}
+					navButton {
+						id
+						url
+						text
+						newtab
+					}
+					logo {
+						data {
+							attributes {
+								formats
+							}
+						}
+					}
+				}
+				footer {
+					logo {
+						data {
+							attributes {
+								formats
+							}
+						}
+					} 
+					columns {
+						title
+						footerLinks {
+							url
+							text
+							newtab
+						}
+					}
+					copyrightText
+				}
+			}
+		}
+	}
+}

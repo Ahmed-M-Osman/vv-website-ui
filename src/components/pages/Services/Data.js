@@ -30,20 +30,20 @@ export const homeObjThree = {
   lightBg: true,
   lightText: false,
   lightTextDesc: false,
-  topLine: 'EASY SETUP',
-  headline: 'Super fast and simple onboarding process',
+  topLine: 'INTERNET',
+  headline: 'Super fast and reliable internet connection',
   description:
-    "Get everything set up and ready in under 10 minutes. All you need to do is add your information and you're ready to go.",
-  buttonLabel: 'Start Now',
+    "Be ahead of the pack with our ultra fast connection to the world wide web. Be there for your clients.",
+  buttonLabel: 'Choose a Plan',
   imgStart: 'start',
   img: 'images/svg-7.svg',
   alt: 'Vault'
 };
 
 export const homeObjFour = {
-  lightBg: false,
-  lightText: true,
-  lightTextDesc: true,
+  lightBg: true,
+  lightText: false,
+  lightTextDesc: false,
   topLine: 'DATA ANALYTICS',
   headline: 'Every transaction is stored on our secure cloud database',
   description:

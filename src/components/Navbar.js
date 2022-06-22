@@ -4,78 +4,108 @@ import './Navbar.css';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import {useQuery, gql} from '@apollo/client';
+import file from '../components/LayoutAPI.txt'
 
-const NAVFOOT = gql`
-  query {
-    layout {
-      data {
-        id
-        __typename
-        attributes {
-          locale
-          metaTitleSuffix
-          metaData {
-            metaTitle
-            metaDescription
-          }
-          favicon {
-            data {
-              id
-              attributes {
-                name
-                url
-              }
-            }
-          }
-          navbar {
-            navLinks {
-              id
-              url
-              text
-              newtab
-            }
-            navButton {
-              id
-              url
-              text
-              newtab
-            }
-            logo {
-              data {
-                attributes {
-                  formats
-                }
-              }
-            }
-          }
-          footer {
-            logo {
-              data {
-                attributes {
-                  formats
-                }
-              }
-            } 
-            columns {
-              title
-              footerLinks {
-                url
-                text
-                newtab
-              }
-            }
-            copyrightText
-          }
-        }
-      }
-    }
-  }
+
+
+
+
+const NAVFOOT = gql`query {
+	layout {
+		data {
+			id
+			__typename
+			attributes {
+				locale
+# 				Use the meta data below for the tab name and suffix
+				metaTitleSuffix
+				metaData {
+					metaTitle
+					metaDescription
+				}
+# 				The favicon for the website
+				favicon {
+					data {
+						id
+						attributes {
+							name
+							url
+						}
+					}
+				}
+# 				Button below the navlinks is for the language change
+				navbar {
+					navLinks {
+						id
+						url
+						text
+						newtab
+					}
+					navButton {
+						id
+						url
+						text
+						newtab
+					}
+					logo {
+						data {
+							attributes {
+								formats
+							}
+						}
+					}
+				}
+				footer {
+					logo {
+						data {
+							attributes {
+								formats
+							}
+						}
+					} 
+					columns {
+						title
+						footerLinks {
+							url
+							text
+							newtab
+						}
+					}
+					copyrightText
+				}
+			}
+		}
+	}
+}
 `;
 
 function Navbar() {
+
+// function Notes() {
+//     const [text, setText] = useState();
+//     fetch(file)
+//         .then((response) => response.text())
+//         .then((textContent) => {
+//           setText(textContent);
+//         });
+//       return text || "Loading...";
+//   }
+
+//   const text = Notes();
+//   console.log('text decoded:', text);
+
+//   if (text != null) {
+//     const NAVFOOT = gql`${text}`;
+//     const {loading, error, data} = useQuery(NAVFOOT);
+//   if (loading) return <p>Loading</p>
+//   if (error) return <p>Error!</p>
+// };
+  
+
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
   const {loading, error, data} = useQuery(NAVFOOT);
+  
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -88,6 +118,11 @@ function Navbar() {
     }
   };
 
+  if (loading) return <p>Loading</p>
+  if (error) return <p>Error!</p>
+  
+  
+
   // useEffect(() => {
   //   showButton();
   //   window.addEventListener('resize', showButton);
@@ -97,8 +132,7 @@ function Navbar() {
   // }, []);
 
 
-  if (loading) return <p>Loading</p>
-  if (error) return <p>Error!</p>
+  
 
 const meta_data = data.layout.data.attributes.metaData;
 const nav_links = data.layout.data.attributes.navbar.navLinks;
@@ -108,13 +142,21 @@ const nav_links = data.layout.data.attributes.navbar.navLinks;
       <IconContext.Provider value={{ color: '#fff' }}>
         <nav className='navbar'>
           <div className='navbar-container container'>
-            <div className="">
-            <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-              {meta_data.metaTitle}
-            </Link>
-            <small className='text-white text-sm '>The Knowledge Company</small>
+
+            <div className="flex-col items-center mt-3">
+
+              <div className="">
+                <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+                  {meta_data.metaTitle}
+                </Link>
+              </div>
+              
+              <div>
+                <small className='flex items-center justify-center text-white text-sm'>The Knowledge Company</small>
+              </div>
+
             </div>
-            
+
             <div className='menu-icon' onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
             </div>
