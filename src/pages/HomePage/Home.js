@@ -1,10 +1,9 @@
 import React from 'react';
-import HeroSection from '../../HeroSection';
+import HeroSection from '../../components/HeroSection';
 import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from './Data';
-import Pricing from '../../Pricing';
-import SliderComponent from '../../SliderComponent';
-import MediaCard from '../../MediaCard';
-import Card from '../../Card';
+import Pricing from '../../components/Pricing';
+import SliderComponent from '../../components/SliderComponent';
+import Card from '../../components/Card';
 
 function Home() {
   return (

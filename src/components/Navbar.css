@@ -43,10 +43,10 @@
 .nav-menu {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   list-style: none;
   text-align: center;
-  justify-content: end;
+  
 }
 
 .nav-item {

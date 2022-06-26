@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
-import Home from './components/pages/HomePage/Home';
-import Services from './components/pages/Services/Services';
-import Solutions from './components/pages/Solutions/Solutions';
-import SignUp from './components/pages/SignUp/SignUp';
+import Home from './pages/HomePage/Home';
+import Services from './pages/Services/Services';
+import Solutions from './pages/Solutions/Solutions';
+import SignUp from './pages/SignUp/SignUp';
 import { BrowserRouter as Router, Routes , Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Footer from './components/pages/Footer.js/Footer';
+import Menuetailwind from './components/MenueTailwind';
+import Footer from './components/Footer';
 import HeroSection from './components/HeroSection';
 import {ApolloClient, InMemoryCache, ApolloProvider} from '@apollo/client';
 

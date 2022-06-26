@@ -5,7 +5,8 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import {useQuery, gql} from '@apollo/client';
 import file from '../components/LayoutAPI.txt'
-
+import Menuetailwind from './MenueTailwind';
+import { navl } from './navlinks';
 
 
 
@@ -136,6 +137,7 @@ function Navbar() {
 
 const meta_data = data.layout.data.attributes.metaData;
 const nav_links = data.layout.data.attributes.navbar.navLinks;
+console.log(navl);
 
   return (
     <>
@@ -161,7 +163,7 @@ const nav_links = data.layout.data.attributes.navbar.navLinks;
               {click ? <FaTimes /> : <FaBars />}
             </div>
     
-            <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+            {/* <ul className={click ? 'nav-menu active' : 'nav-menu'}>
               {nav_links.map(nav_link => (
                     <li className='nav-item'>
                     <Link
@@ -173,8 +175,18 @@ const nav_links = data.layout.data.attributes.navbar.navLinks;
                     </Link>
                   </li>
               ))};
-            </ul>
+            </ul> */}
 
+          <div className="flex justify-start">
+            <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+              {navl.map(nav_link => (
+                    <li className='nav-item'>
+                      <Menuetailwind data={nav_link}/> 
+                  </li>
+              ))}
+            </ul>
+            </div>
+          
           </div>
         </nav>
       </IconContext.Provider>
