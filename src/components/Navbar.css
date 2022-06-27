@@ -1,5 +1,5 @@
 .navbar {
-  background: #1c2237;
+  background: #fff;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -27,7 +27,7 @@
 }
 
 .navbar-logo {
-  color: #fff;
+  color: #000;
   justify-self: start;
   cursor: pointer;
   text-decoration: none;
@@ -59,7 +59,7 @@
 }
 
 .nav-links {
-  color: #fff;
+  color: #1c2237;
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -68,7 +68,7 @@
 }
 
 .fa-bars {
-  color: #fff;
+  color: #1c2237;
 }
 
 .menu-icon {
@@ -93,7 +93,7 @@
   }
 
   .nav-menu.active {
-    background: #1c2237;
+    background: #fff;
     left: 0;
     opacity: 1;
     transition: all 0.6s ease;
@@ -119,6 +119,7 @@
 
   .nav-item {
     width: 100%;
+    margin-left: 3rem;
   }
 
   .navbar-logo {
@@ -137,9 +138,11 @@
     font-size: 1.8rem;
     cursor: pointer;
   }
-
+.slogan{
+  visibility: hidden;
+}
   .fa-times {
-    color: #fff;
+    color: #1c2237;
     font-size: 2rem;
   }
 

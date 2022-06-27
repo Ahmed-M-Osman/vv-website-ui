@@ -75,6 +75,7 @@ button:hover {
   box-sizing: border-box;
   padding: 0 20px;
   margin: auto;
+  
 }
 
 .wrapper a {
@@ -90,6 +91,9 @@ button:hover {
   position: relative;
   height: 70vh;
   overflow: hidden;
+  border: #ffffff;
+  border-radius: 1rem;
+  margin-inline: 1rem;
 }
 
 .slide {

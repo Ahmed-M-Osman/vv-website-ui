@@ -153,14 +153,14 @@ console.log(navl);
                 </Link>
               </div>
               
-              <div>
-                <small className='flex items-center justify-center text-white text-sm'>The Knowledge Company</small>
+              <div className='slogan'>
+                <small className='flex items-center justify-center text-black text-sm'>The Knowledge Company</small>
               </div>
 
             </div>
 
             <div className='menu-icon' onClick={handleClick}>
-              {click ? <FaTimes /> : <FaBars />}
+              {click ? <FaTimes color='black' /> : <FaBars color='black'/>}
             </div>
     
             {/* <ul className={click ? 'nav-menu active' : 'nav-menu'}>

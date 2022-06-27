@@ -3,7 +3,7 @@ export const navl =  [
       name: "Software",
       submenu: true,
       sublink: [
-        { name: "OrgaSoul", link: "/" },
+        { name: "OrgaSoul", link: "/software#orgasoul" },
         { name: "OWL", link: "/" },
         { name: "E-Commerce", link: "/" },
         { name: "Web Development", link: "/" },

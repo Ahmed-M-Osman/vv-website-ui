@@ -13,7 +13,7 @@ export default function Menuetailwind({data}) {
     <div className='flex-col items-center mt-4 mr-6'>
     <Menu as="div" className="flex text-left">
       <div>
-        <Menu.Button className="flex w-full rounded-md border shadow-sm px-4 text-sm font-medium text-white-700 hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-offset-2  ">
+        <Menu.Button className="flex w-full text-black rounded-md border shadow-sm px-4 text-sm font-medium text-white-700 hover:bg-orange-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2  ">
           {data.name}
           <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
         </Menu.Button>
@@ -28,7 +28,7 @@ export default function Menuetailwind({data}) {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="origin-bottom top-16 absolute  mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none">
+        <Menu.Items className="lg:origin-bottom lg:top-16 orign-right left-28 absolute  mt-2 w-56 rounded-md shadow-lg bg-gray-100 ring-1 ring-black ring-opacity-5 divide-y divide-gray-100 focus:outline-none">
           
         {data.sublink.map(sub => (
              <Menu.Item>
