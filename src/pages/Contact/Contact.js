@@ -1,16 +1,18 @@
 import React from 'react';
 import HeroSection from '../../components/HeroSection';
 import { homeObjOne, homeObjTwo, homeObjThree, homeObjFour } from './Data';
-import Pricing from '../../components/Pricing';
+import Form from '../../components/form'
+
 
 function Contact() {
   return (
     <>
-      <HeroSection {...homeObjThree} />
+      <Form />
+      {/* <HeroSection {...homeObjThree} />
       <HeroSection {...homeObjOne} />
       <HeroSection {...homeObjFour} />
       <HeroSection {...homeObjTwo} />
-      <HeroSection {...homeObjThree} />
+      <HeroSection {...homeObjThree} /> */}
     </>
   );
 }

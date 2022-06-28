@@ -31,4 +31,14 @@ export const navl =  [
         { name: "Remote Monitoring", link: "/" },
       ],
     },
+    {
+      name: "Contact",
+      submenu: false,
+      sublink: "/contact",
+    },
+    {
+      name: "About",
+      submenu: false,
+      sublink:"/about",
+    },
   ]

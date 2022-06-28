@@ -182,10 +182,31 @@ console.log(navl);
               {navl.map(nav_link => (
                     <li className='nav-item'>
                       <Menuetailwind data={nav_link}/> 
+                      <div className="mr-24" />
                   </li>
+                  
               ))}
+              {/* <li className='nav-item'>
+              <Link
+                      to='/contact'
+                      className='nav-links'
+                      onClick={closeMobileMenu}
+                    >
+                    Contact
+                    </Link>
+                </li>
+                <li className='nav-item'>
+              <Link
+                      to='/about'
+                      className='nav-links'
+                      onClick={closeMobileMenu}
+                    >
+                    About
+                    </Link>
+                </li> */}
             </ul>
             </div>
+            <div className="p-12" />
           
           </div>
         </nav>

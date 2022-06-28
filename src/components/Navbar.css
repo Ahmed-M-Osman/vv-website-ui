@@ -118,7 +118,7 @@
   }
 
   .nav-item {
-    width: 100%;
+    width: fit-content;
     margin-left: 3rem;
   }
 
