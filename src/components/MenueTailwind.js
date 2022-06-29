@@ -2,14 +2,25 @@
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import tw from "twin.macro";
+import { Button } from './Button';
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+ 
+
+
 export default function Menuetailwind({data}) {
+
+  let navigate = useNavigate(); 
+  const routeChange = (l) =>{ 
+    let path = `${l}`; 
+    navigate(path);
+  }
+
   if (data.submenu === true){
     return (
       <div className='flex-col items-center mt-4 mr-1'>
@@ -62,11 +73,11 @@ export default function Menuetailwind({data}) {
         
 
     
-        <button className="flex w-full text-black rounded-md border shadow-sm px-4 text-sm font-medium text-white-700 bg-white hover:bg-orange-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2"
+        <Button className="flex w-full text-black rounded-md border shadow-sm px-4 text-sm font-medium text-white-700 bg-white hover:bg-orange-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2"
           >
-            {data.name}
+            <Link to={data.sublink}>{data.name}</Link> 
             
-          </button>
+          </Button>
           
         </div>
     </div>
