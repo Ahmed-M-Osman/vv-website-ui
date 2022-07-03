@@ -36,12 +36,6 @@ const NAVFOOT = gql`query {
 				}
 # 				Button below the navlinks is for the language change
 				navbar {
-					navLinks {
-						id
-						url
-						text
-						newtab
-					}
 					navButton {
 						id
 						url
